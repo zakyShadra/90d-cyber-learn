@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGNAL/90 - Roadmap Praktik Cybersecurity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/views/overview.css">
+  <link rel="stylesheet" href="css/views/phaseDays.css">
+  <link rel="stylesheet" href="css/views/day.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="topbar__identity">
+      <div class="brand">
+        <span class="brand__mark">SIGNAL</span><span class="brand__num">/90</span>
+      </div>
+      <p class="tagline">Roadmap praktik keamanan siber - satu hari, beberapa step, langsung dicek.</p>
+    </div>
+
+    <div class="topbar__progress">
+      <div class="topbar__progress-label">
+        <span id="overallDone">0</span>/<span id="overallTotal">0</span> step selesai
+      </div>
+      <div class="topbar__bar" id="overallBar" role="progressbar" aria-label="Progres keseluruhan" aria-valuemin="0"
+        aria-valuemax="100" aria-valuenow="0">
+        <div class="topbar__bar-fill" id="overallFill"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="phase-nav" aria-label="Daftar fase roadmap">
+      <button class="phase-nav__overview" id="overviewBtn" type="button">Ringkasan</button>
+      <ol class="phase-nav__list" id="phaseList"></ol>
+      <p class="phase-nav__source">
+        Diadaptasi dari
+        <a href="https://github.com/farhanashrafdev/90DaysOfCyberSecurity" target="_blank"
+          rel="noopener">90DaysOfCyberSecurity</a>
+      </p>
+    </nav>
+
+    <main class="content" id="content" tabindex="-1"></main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+/* Komponen yang dipakai lebih dari satu view (phaseDays.js DAN day.js) —
+   kalau cuma dipakai satu view, taruh di css/views/, bukan di sini. */
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb__link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent-green-bright);
+  cursor: pointer;
+  font: inherit;
+}
+
+.breadcrumb__current {
+  color: var(--text-dim);
+}
+
+.phase-header {
+  max-width: 68ch;
+  margin-bottom: 8px;
+}
+
+.phase-header__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-blue);
+}
+
+.phase-header h1 {
+  font-size: 1.5rem;
+  margin: 6px 0 12px;
+}
+
+.phase-header__summary {
+  color: var(--text-dim);
+  max-width: 62ch;
+}
+
+.phase-header__resources {
+  margin: 16px 0 8px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  max-width: 62ch;
+}
+
+.phase-header__resources-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin-bottom: 6px;
+}
+
+.phase-header__resources ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.phase-header__resources li {
+  margin: 2px 0;
+}
+
+.phase-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 28px;
+  max-width: 62ch;
+}
+
+.phase-progress__bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.phase-progress__fill {
+  height: 100%;
+  background: var(--accent-green);
+  border-radius: 999px;
+  transition: width var(--motion);
+}
+
+.phase-progress__text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}

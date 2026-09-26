@@ -1,0 +1,44 @@
+/* Semua media query dikumpulkan di sini supaya gampang lihat breakpoint apa
+   saja yang ada, tanpa harus scroll tiap file komponen. */
+
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .phase-nav {
+    position: static;
+    width: 100%;
+    flex: none;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+
+  .content {
+    padding: 24px 20px 60px;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar {
+    padding: 14px 16px;
+  }
+  .topbar__bar {
+    width: 100%;
+    max-width: none;
+  }
+  .step {
+    padding: 16px;
+  }
+  .answer-box__row {
+    flex-direction: column;
+  }
+  .answer-box__submit {
+    width: 100%;
+  }
+  .day-nav__next {
+    width: 100%;
+  }
+}

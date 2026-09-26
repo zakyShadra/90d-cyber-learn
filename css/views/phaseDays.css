@@ -1,0 +1,72 @@
+/* Mirror js/views/phaseDays.js - daftar hari dalam satu fase, ala "Room" */
+
+.day-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  max-width: 900px;
+}
+
+.day-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  cursor: pointer;
+  transition:
+    border-color var(--motion),
+    transform var(--motion);
+}
+
+/* Urutan penting: .is-complete harus di atas :hover, supaya kartu yang sudah
+   selesai tetap punya border hijau saat di-hover. */
+.day-card.is-complete {
+  border-color: var(--accent-green-dim);
+}
+
+.day-card:hover {
+  border-color: var(--accent-green);
+  transform: translateY(-2px);
+}
+
+.day-card__badge {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.day-card.is-complete .day-card__badge {
+  background: var(--accent-green-dim);
+  border-color: var(--accent-green);
+  color: var(--accent-green-bright);
+}
+
+.day-card__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-faint);
+}
+
+.day-card__title {
+  margin: 2px 0 6px;
+  font-size: 0.95rem;
+}
+
+.day-card__count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+}

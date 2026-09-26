@@ -1,0 +1,199 @@
+/* Mirror js/views/day.js - daftar step (materi/praktik/kuis), kotak jawaban,
+   dan tombol navigasi ke hari berikutnya. */
+
+.steps {
+  max-width: 68ch;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 20px 22px;
+}
+
+.step.is-done {
+  border-color: var(--accent-green-dim);
+}
+
+.step__kind {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--accent-blue);
+  background: var(--accent-blue-dim);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.step__kind--praktik {
+  color: var(--accent-amber);
+  background: var(--accent-amber-dim);
+}
+.step__kind--kuis {
+  color: var(--accent-green-bright);
+  background: var(--accent-green-dim);
+}
+
+.step__title {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+}
+.step__body {
+  margin: 0;
+  color: var(--text-dim);
+  max-width: 58ch;
+}
+.step__question {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.step__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.step__checkbox {
+  flex: 0 0 auto;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+.step__checkbox input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--text-faint);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.step__checkbox input:checked {
+  background-color: var(--accent-green);
+  border-color: var(--accent-green);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230b0e14' stroke-width='2.4'%3E%3Cpath d='M3 8.5l3 3 7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.step__instructions {
+  margin: 0 0 14px;
+  padding-left: 20px;
+  color: var(--text-dim);
+}
+.step__instructions li {
+  margin: 4px 0;
+}
+
+.step__proof {
+  margin: 0 0 4px;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  background: var(--panel-raised);
+  border-left: 2px solid var(--accent-amber);
+  padding: 8px 12px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.step__proof strong {
+  color: var(--accent-amber);
+  font-weight: 600;
+}
+
+/* -- Kotak jawaban (dipakai praktik.check dan kuis) -- */
+.answer-box {
+  margin-top: 14px;
+}
+
+.answer-box__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  margin-bottom: 6px;
+}
+
+.answer-box__row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.answer-box__input {
+  flex: 1 1 220px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+.answer-box__input:focus-visible {
+  border-color: var(--accent-green);
+}
+
+.answer-box__submit {
+  background: var(--accent-green);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 9px 18px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--motion);
+}
+
+.answer-box__submit:hover {
+  background: var(--accent-green-bright);
+}
+
+.answer-box__feedback {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+}
+
+.answer-box__feedback.is-correct {
+  color: var(--accent-green-bright);
+}
+.answer-box__feedback.is-wrong {
+  color: var(--accent-red);
+}
+
+/* -- Navigasi antar-hari -- */
+.day-nav {
+  max-width: 68ch;
+  margin-top: 22px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.day-nav__next {
+  background: var(--accent-green);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--motion);
+}
+
+.day-nav__next:hover {
+  background: var(--accent-green-bright);
+}

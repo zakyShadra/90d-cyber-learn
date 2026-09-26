@@ -1,0 +1,39 @@
+/* Design tokens - dark navy + hijau terang, ala platform latihan hacking */
+:root {
+  color-scheme: dark;
+
+  --bg: #0b0e14;
+  --panel: #131824;
+  --panel-raised: #182030;
+  --border: #232c3d;
+  --border-soft: #1a212e;
+
+  --text: #eef1f6;
+  --text-dim: #9aa5b4;
+  --text-faint: #5b6577;
+
+  --accent-green: #7ed957;
+  --accent-green-bright: #97ee6f;
+  --accent-green-dim: #1f3d24;
+  --accent-blue: #4fa3f7;
+  --accent-blue-dim: #1c2f47;
+  --accent-amber: #f5a524;
+  --accent-amber-dim: #3d2f14;
+  --accent-red: #f76b6b;
+  --accent-red-dim: #3d2020;
+
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: 6px;
+  --radius: 12px;
+  --shadow-card: 0 10px 28px rgba(0, 0, 0, 0.35);
+  --motion: 160ms ease;
+  --topbar-h: 76px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion: 0ms;
+  }
+}

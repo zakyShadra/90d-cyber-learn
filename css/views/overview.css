@@ -1,0 +1,121 @@
+/* Mirror js/views/overview.js - grid semua fase ala daftar "Path" */
+
+.overview-hero {
+  max-width: 62ch;
+  margin-bottom: 30px;
+}
+
+.overview-hero h1 {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.overview-hero p {
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.overview-stats {
+  display: flex;
+  gap: 28px;
+  margin: 0 0 36px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  font-family: var(--font-mono);
+}
+
+.stat__value {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  display: block;
+  line-height: 1.1;
+}
+
+.stat__label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.phase-card {
+  display: flex;
+  gap: 16px;
+  text-align: left;
+  align-items: flex-start;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition:
+    border-color var(--motion),
+    transform var(--motion);
+}
+
+.phase-card:hover {
+  border-color: var(--accent-green);
+  transform: translateY(-2px);
+}
+
+.phase-card__ring {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phase-card__ring-inner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text);
+}
+
+.phase-card__body {
+  min-width: 0;
+}
+
+.phase-card__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent-blue);
+  margin-bottom: 4px;
+}
+
+.phase-card__title {
+  margin: 0 0 6px;
+  font-size: 1.02rem;
+}
+
+.phase-card__summary {
+  margin: 0 0 10px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.phase-card__count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+}

@@ -1,0 +1,179 @@
+/* Chrome yang selalu tampil: topbar + sidebar daftar fase. Mirror js/nav.js */
+
+/* -- Top bar -- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 28px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.brand__mark {
+  color: var(--text);
+  font-weight: 600;
+}
+.brand__num {
+  color: var(--accent-green);
+  font-weight: 600;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  max-width: 46ch;
+}
+
+.topbar__progress-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+  text-align: right;
+}
+
+.topbar__progress-label span {
+  color: var(--text);
+}
+
+.topbar__bar {
+  width: 260px;
+  max-width: 40vw;
+  height: 8px;
+  background: var(--border-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.topbar__bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+  border-radius: 999px;
+  transition: width var(--motion);
+}
+
+/* -- Sidebar: daftar fase -- */
+.phase-nav {
+  width: 280px;
+  flex: 0 0 280px;
+  border-right: 1px solid var(--border);
+  background: var(--panel);
+  padding: 18px 0 24px;
+  position: sticky;
+  top: 0;
+  height: calc(100vh - var(--topbar-h));
+  overflow-y: auto;
+}
+
+.phase-nav__overview {
+  display: block;
+  width: calc(100% - 28px);
+  margin: 0 14px 14px;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color var(--motion),
+    background var(--motion);
+}
+
+.phase-nav__overview:hover {
+  border-color: var(--accent-green);
+}
+
+.phase-nav__overview.is-active {
+  background: var(--accent-green-dim);
+  border-color: var(--accent-green);
+  color: var(--text);
+}
+
+.phase-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.phase-nav__item {
+  border-top: 1px solid var(--border-soft);
+}
+
+.phase-nav__link {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.phase-nav__link:hover .phase-nav__title {
+  color: var(--text);
+}
+
+.phase-nav__link.is-active {
+  background: var(--panel-raised);
+  box-shadow: inset 3px 0 0 var(--accent-green);
+}
+
+.phase-nav__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.phase-nav__number,
+.phase-nav__days {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.phase-nav__title {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+.phase-nav__link.is-active .phase-nav__title {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.phase-nav__meter {
+  margin-top: 8px;
+  height: 4px;
+  background: var(--border-soft);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.phase-nav__meter-fill {
+  height: 100%;
+  background: var(--accent-green);
+}
+
+.phase-nav__source {
+  margin: 20px 14px 0;
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
