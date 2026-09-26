@@ -13,9 +13,18 @@
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-mono);
   font-size: 1.15rem;
   letter-spacing: 0.02em;
+}
+
+.brand__logo {
+  width: 30px;
+  height: 30px;
+  display: block;
 }
 
 .brand__mark {
@@ -100,6 +109,21 @@
 .phase-nav__overview.is-active {
   background: var(--accent-green-dim);
   border-color: var(--accent-green);
+  color: var(--text);
+}
+
+.phase-nav__overview--advanced {
+  border-color: var(--accent-amber-dim);
+  color: var(--accent-amber);
+}
+
+.phase-nav__overview--advanced:hover {
+  border-color: var(--accent-amber);
+}
+
+.phase-nav__overview--advanced.is-active {
+  background: var(--accent-amber-dim);
+  border-color: var(--accent-amber);
   color: var(--text);
 }
 

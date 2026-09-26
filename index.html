@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIGNAL/90 - Roadmap Praktik Cybersecurity</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -18,7 +19,9 @@
   <link rel="stylesheet" href="css/views/overview.css">
   <link rel="stylesheet" href="css/views/phaseDays.css">
   <link rel="stylesheet" href="css/views/day.css">
+  <link rel="stylesheet" href="css/views/exercises.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/mascot.css">
 </head>
 
 <body>
@@ -26,6 +29,7 @@
   <header class="topbar">
     <div class="topbar__identity">
       <div class="brand">
+        <img class="brand__logo" src="assets/logo.png" alt="">
         <span class="brand__mark">SIGNAL</span><span class="brand__num">/90</span>
       </div>
       <p class="tagline">Roadmap praktik keamanan siber - satu hari, beberapa step, langsung dicek.</p>
@@ -45,6 +49,7 @@
   <div class="layout">
     <nav class="phase-nav" aria-label="Daftar fase roadmap">
       <button class="phase-nav__overview" id="overviewBtn" type="button">Ringkasan</button>
+      <button class="phase-nav__overview phase-nav__overview--advanced" id="exercisesBtn" type="button">Latihan Soal (Advanced)</button>
       <ol class="phase-nav__list" id="phaseList"></ol>
       <p class="phase-nav__source">
         Diadaptasi dari
@@ -56,7 +61,10 @@
     <main class="content" id="content" tabindex="-1"></main>
   </div>
 
+  <div class="mascot" id="mascot"></div>
+
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/mascot.js"></script>
 </body>
 
 </html>

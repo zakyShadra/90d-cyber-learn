@@ -69,7 +69,7 @@ function renderMateri(
   return article;
 }
 
-function renderAnswerBox(id, { placeholder, accepted, explanation }, onResult) {
+export function renderAnswerBox(id, { placeholder, accepted, explanation }, onResult) {
   const input = el("input", {
     class: "answer-box__input",
     type: "text",

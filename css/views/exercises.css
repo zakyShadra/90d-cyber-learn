@@ -1,0 +1,88 @@
+/* Mirror js/views/exercises.js — daftar & detail studi kasus advanced */
+
+.exercise-target {
+  border: 1px solid var(--accent-amber-dim);
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  max-width: 68ch;
+}
+
+.exercise-target__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--accent-amber);
+  margin-bottom: 6px;
+}
+
+.exercise-target h3 { margin: 0 0 8px; font-size: 1.05rem; }
+
+.exercise-target__url {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--accent-green-bright);
+  word-break: break-all;
+  margin: 0 0 8px;
+}
+
+.exercise-target__creds { margin-top: 10px; }
+.exercise-target__creds th,
+.exercise-target__creds td {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  max-width: 900px;
+}
+
+.exercise-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  text-align: left;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color var(--motion), transform var(--motion);
+}
+
+.exercise-card.is-done { border-color: var(--accent-green-dim); }
+.exercise-card:hover { border-color: var(--accent-amber); transform: translateY(-2px); }
+
+.exercise-card__badge {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.exercise-card.is-done .exercise-card__badge {
+  background: var(--accent-green-dim);
+  border-color: var(--accent-green);
+  color: var(--accent-green-bright);
+}
+
+.exercise-card__category {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent-amber);
+  margin-bottom: 4px;
+}
+
+.exercise-card__title { margin: 0; font-size: 0.95rem; }
