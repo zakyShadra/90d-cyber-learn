@@ -1,4 +1,4 @@
-# SIGNAL/90
+# 90dCyberLearn
 
 Roadmap praktik keamanan siber 90 hari, diadaptasi dari
 [90DaysOfCyberSecurity](https://github.com/farhanashrafdev/90DaysOfCyberSecurity).

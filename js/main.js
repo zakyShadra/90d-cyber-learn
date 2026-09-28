@@ -5,6 +5,7 @@ import { ROADMAP } from '../data/roadmap.js';
 import { EXERCISES, TARGET } from '../data/exercises.js';
 import { parseHash, goExercises } from './router.js';
 import { renderTopbar, renderNav, initNav } from './nav.js';
+import { initScrollHeader } from './scrollHeader.js';
 import { renderOverview } from './views/overview.js';
 import { renderPhaseDays } from './views/phaseDays.js';
 import { renderDay } from './views/day.js';
@@ -15,7 +16,7 @@ const exercisesBtn = document.getElementById('exercisesBtn');
 
 function refreshChrome(activeKey) {
   renderTopbar(ROADMAP);
-  renderNav(ROADMAP, activeKey);
+  renderNav(activeKey);
 }
 
 function route() {
@@ -47,6 +48,7 @@ function route() {
 }
 
 initNav();
+initScrollHeader();
 exercisesBtn.addEventListener('click', goExercises);
 window.addEventListener('hashchange', route);
 route();

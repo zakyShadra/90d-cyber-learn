@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIGNAL/90 - Roadmap Praktik Cybersecurity</title>
+  <title>90dCyberLearn - Roadmap Praktik Cybersecurity</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +30,12 @@
     <div class="topbar__identity">
       <div class="brand">
         <img class="brand__logo" src="assets/logo.png" alt="">
-        <span class="brand__mark">SIGNAL</span><span class="brand__num">/90</span>
+        <span class="brand__mark">90d</span><span class="brand__num">CyberLearn</span>
       </div>
-      <p class="tagline">Roadmap praktik keamanan siber - satu hari, beberapa step, langsung dicek.</p>
+      <nav class="topbar__nav" aria-label="Navigasi utama">
+        <button class="topbar__nav-link" id="overviewBtn" type="button">Ringkasan</button>
+        <button class="topbar__nav-link topbar__nav-link--advanced" id="exercisesBtn" type="button">Latihan Soal</button>
+      </nav>
     </div>
 
     <div class="topbar__progress">
@@ -47,19 +50,22 @@
   </header>
 
   <div class="layout">
-    <nav class="phase-nav" aria-label="Daftar fase roadmap">
-      <button class="phase-nav__overview" id="overviewBtn" type="button">Ringkasan</button>
-      <button class="phase-nav__overview phase-nav__overview--advanced" id="exercisesBtn" type="button">Latihan Soal (Advanced)</button>
-      <ol class="phase-nav__list" id="phaseList"></ol>
-      <p class="phase-nav__source">
-        Diadaptasi dari
-        <a href="https://github.com/farhanashrafdev/90DaysOfCyberSecurity" target="_blank"
-          rel="noopener">90DaysOfCyberSecurity</a>
-      </p>
-    </nav>
-
     <main class="content" id="content" tabindex="-1"></main>
   </div>
+
+  <footer class="site-footer">
+    <p class="site-footer__line">
+      Diadaptasi dari
+      <a href="https://github.com/farhanashrafdev/90DaysOfCyberSecurity" target="_blank"
+        rel="noopener">90DaysOfCyberSecurity</a>
+    </p>
+    <p class="site-footer__line">
+      Dibuat oleh
+      <a href="https://github.com/zakyShadra" target="_blank" rel="noopener">github.com/zakyShadra</a>
+      ·
+      <a href="mailto:zakyshadra@gmail.com">zakyshadra@gmail.com</a>
+    </p>
+  </footer>
 
   <div class="mascot" id="mascot"></div>
 

@@ -68,29 +68,6 @@
   transform: translateY(-2px);
 }
 
-.phase-card__ring {
-  flex: 0 0 auto;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.phase-card__ring-inner {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--panel);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--text);
-}
-
 .phase-card__body {
   min-width: 0;
 }

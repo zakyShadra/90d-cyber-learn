@@ -31,11 +31,31 @@ export function isStepDone(id) {
   return Boolean(progress[id] && progress[id].done);
 }
 
+export function getAnswer(id) {
+  return (progress[id] && progress[id].answer) || "";
+}
+
+/* done=false tidak selalu berarti "hapus riwayat" - kalau step itu punya
+   jawaban tersimpan (kuis/praktik yang pernah dijawab salah), riwayatnya
+   tetap disimpan supaya user tidak kehilangan apa yang sudah diketik. */
 export function markStep(id, done) {
+  const existing = progress[id];
   if (done) {
-    progress[id] = { done: true };
+    progress[id] = { ...existing, done: true };
+  } else if (existing && existing.answer) {
+    progress[id] = { ...existing, done: false };
   } else {
     delete progress[id];
+  }
+  saveProgress();
+}
+
+export function saveAnswer(id, value) {
+  const existing = progress[id];
+  if (!value && !(existing && existing.done)) {
+    delete progress[id];
+  } else {
+    progress[id] = { ...existing, answer: value };
   }
   saveProgress();
 }

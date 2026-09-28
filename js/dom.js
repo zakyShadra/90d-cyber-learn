@@ -43,16 +43,6 @@ export function phaseNumber(phase) {
   return String(phase.number).padStart(2, "0");
 }
 
-export function ringStyle(pct) {
-  return (
-    "background: conic-gradient(var(--accent-green) " +
-    pct +
-    "%, var(--border-soft) " +
-    pct +
-    "% 100%)"
-  );
-}
-
 export function setCurrent(node, isCurrent) {
   node.classList.toggle("is-active", isCurrent);
   if (isCurrent) node.setAttribute("aria-current", "true");

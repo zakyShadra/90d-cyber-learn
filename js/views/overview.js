@@ -1,7 +1,7 @@
 // Ringkasan: grid semua fase, ala daftar "Path".
 
-import { el, setContent, ringStyle, phaseNumber } from "../dom.js";
-import { countPhase, countAll, percent } from "../state.js";
+import { el, setContent, phaseNumber } from "../dom.js";
+import { countPhase, countAll } from "../state.js";
 import { goPhase } from "../router.js";
 
 function stat(value, label) {
@@ -13,12 +13,8 @@ function stat(value, label) {
 
 function phaseCard(phase) {
   const { done, total } = countPhase(phase);
-  const pct = percent(done, total);
 
   const card = el("button", { class: "phase-card", type: "button" }, [
-    el("div", { class: "phase-card__ring", style: ringStyle(pct) }, [
-      el("div", { class: "phase-card__ring-inner", text: pct + "%" }),
-    ]),
     el("div", { class: "phase-card__body" }, [
       el("div", {
         class: "phase-card__eyebrow",

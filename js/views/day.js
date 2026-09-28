@@ -9,6 +9,8 @@ import {
   answerMatches,
   countDay,
   percent,
+  getAnswer,
+  saveAnswer,
 } from "../state.js";
 import { goOverview, goPhase, goDay, nextDayTarget } from "../router.js";
 
@@ -88,6 +90,7 @@ export function renderAnswerBox(id, { placeholder, accepted, explanation }, onRe
 
   function check() {
     const correct = answerMatches(input.value, accepted);
+    saveAnswer(id, input.value);
     if (correct) {
       feedback.textContent = explanation ? "Benar. " + explanation : "Benar.";
     } else {
@@ -101,12 +104,22 @@ export function renderAnswerBox(id, { placeholder, accepted, explanation }, onRe
   }
 
   button.addEventListener("click", check);
+  input.addEventListener("blur", () => saveAnswer(id, input.value));
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       check();
     }
   });
+
+  /* Balik ke step yang pernah dijawab: isi ulang input dan tampilkan lagi
+     feedback-nya, supaya user langsung inget jawaban & hasilnya tanpa
+     harus klik "Cek Jawaban" ulang. */
+  const savedAnswer = getAnswer(id);
+  if (savedAnswer) {
+    input.value = savedAnswer;
+    check();
+  }
 
   return el("div", { class: "answer-box" }, [
     el("label", {
